@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class LoginViewController: UIViewController {
 
@@ -17,6 +18,21 @@ class LoginViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         print("Login vc has been called")
+        
+        setupUI()
+    }
+    
+    func setupUI() {
+        guard let superview = self.view else { return }
+        let box = UIView()
+        superview.addSubview(box)
+        
+        box.backgroundColor = .blue
+        
+        box.snp.makeConstraints { (make) -> Void in
+            make.edges.equalTo(superview).inset(UIEdgeInsetsMake(20, 20, 20, 20))
+        }
+
     }
 
 }

@@ -10,8 +10,23 @@ import UIKit
 import SnapKit
 
 class StartSceenViewController: UIViewController {
-    var submitButton: UIButton!
-    var userName: UITextField!
+    lazy var submitButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Submit", for: UIControlState.normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        button.backgroundColor = UIColor(red:0.00, green:0.75, blue:0.44, alpha:1.0)
+        button.tintColor = .white
+        
+        return button
+    }()
+    
+    lazy var userName: UITextField = {
+        let textField = UITextField()
+        textField.placeholder = "Enter any github username"
+        textField.font = UIFont.boldSystemFont(ofSize: 20)
+        
+        return textField
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,17 +43,7 @@ class StartSceenViewController: UIViewController {
     
     func setupUI() {
         self.view.backgroundColor = .white
-        
-        submitButton = UIButton()
-        submitButton.setTitle("Submit", for: UIControlState.normal)
-        submitButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
-        submitButton.backgroundColor = UIColor(red:0.00, green:0.75, blue:0.44, alpha:1.0)
-        submitButton.tintColor = .white
         self.view.addSubview(submitButton)
-        
-        userName = UITextField()
-        userName.placeholder = "Enter any github username"
-        userName.font = UIFont.boldSystemFont(ofSize: 20)
         self.view.addSubview(userName)
         
         submitButton.snp.makeConstraints { (make) in

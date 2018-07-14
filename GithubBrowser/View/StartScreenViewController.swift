@@ -8,8 +8,11 @@
 
 import UIKit
 import SnapKit
+import RxSwift
+import RxCocoa
 
 class StartSceenViewController: UIViewController {
+    let disposeBag = DisposeBag()
     var viewModel: StartScreenViewModel? {
         willSet {
             viewModel?.viewDelegate = nil
@@ -25,6 +28,8 @@ class StartSceenViewController: UIViewController {
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         button.backgroundColor = UIColor(red:0.00, green:0.75, blue:0.44, alpha:1.0)
         button.tintColor = .white
+        button.isEnabled = false
+        button.alpha = 0.5
         button.addTarget(self, action: #selector(self.submitHandler), for: .touchUpInside)
         
         return button
@@ -44,11 +49,30 @@ class StartSceenViewController: UIViewController {
         // Do any additional setup after loading the view.
         print("Login vc has been called")
         
+        // Bindings
+        setUpBindingis()
+        
+        // Auto Layouts
         setupUI()
     }
     
     override func viewDidLayoutSubviews() {
         remakeUI()
+    }
+    
+    func setUpBindingis() {
+        userName.rx.text
+            .orEmpty
+            .bind(to: viewModel!.username)
+            .disposed(by: disposeBag)
+        
+        viewModel?.isValid.map { $0 }
+            .bind(to: submitButton.rx.isEnabled)
+            .disposed(by: disposeBag)
+        
+        viewModel?.isValid.subscribe(onNext: {
+            self.submitButton.alpha = $0 ? 1 : 0.5
+        }).disposed(by: disposeBag)
     }
     
     func setupUI() {

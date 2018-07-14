@@ -10,12 +10,22 @@ import UIKit
 import SnapKit
 
 class StartSceenViewController: UIViewController {
+    var viewModel: StartScreenViewModel? {
+        willSet {
+            viewModel?.viewDelegate = nil
+        }
+        didSet {
+            viewModel?.viewDelegate = self
+        }
+    }
+    
     lazy var submitButton: UIButton = {
         let button = UIButton()
         button.setTitle("Submit", for: UIControlState.normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         button.backgroundColor = UIColor(red:0.00, green:0.75, blue:0.44, alpha:1.0)
         button.tintColor = .white
+        button.addTarget(self, action: #selector(self.submitHandler), for: .touchUpInside)
         
         return button
     }()
@@ -67,4 +77,14 @@ class StartSceenViewController: UIViewController {
         userName.underline(color: UIColor(red:0.42, green:0.59, blue:0.91, alpha:1.0))
     }
     
+    @objc func submitHandler(sender: UIButton!) {
+        viewModel?.handleUsernameInput()
+    }
+    
+}
+
+extension StartSceenViewController: StartScreenViewDelegate {
+    func userNameCheckComplete(viewModel: StartScreenViewModelContract) {
+        print("View delegate has received the callback")
+    }
 }

@@ -13,6 +13,9 @@
 		C739C26720F1685B009BB2CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C739C26520F1685B009BB2CB /* LaunchScreen.storyboard */; };
 		C739C27220F16A7F009BB2CB /* StartScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C739C27120F16A7F009BB2CB /* StartScreenViewController.swift */; };
 		C765687620F2DD2900AD4D12 /* UIHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C765687520F2DD2900AD4D12 /* UIHelpers.swift */; };
+		C765687820F990A500AD4D12 /* StartScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C765687720F990A500AD4D12 /* StartScreenViewModel.swift */; };
+		C765687B20F99B5200AD4D12 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C765687A20F99B5200AD4D12 /* Coordinator.swift */; };
+		C765687F20F99DA800AD4D12 /* StartScreenCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C765687E20F99DA800AD4D12 /* StartScreenCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +28,9 @@
 		C739C26820F1685B009BB2CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C739C27120F16A7F009BB2CB /* StartScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreenViewController.swift; sourceTree = "<group>"; };
 		C765687520F2DD2900AD4D12 /* UIHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelpers.swift; sourceTree = "<group>"; };
+		C765687720F990A500AD4D12 /* StartScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreenViewModel.swift; sourceTree = "<group>"; };
+		C765687A20F99B5200AD4D12 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		C765687E20F99DA800AD4D12 /* StartScreenCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreenCoordinator.swift; sourceTree = "<group>"; };
 		DABA7231D20219C2778FC8D2 /* Pods-GithubBrowser.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubBrowser.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GithubBrowser/Pods-GithubBrowser.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,6 +75,7 @@
 		C739C25B20F16859009BB2CB /* GithubBrowser */ = {
 			isa = PBXGroup;
 			children = (
+				C765687920F99B1E00AD4D12 /* Coordinators */,
 				C765687420F2DD0C00AD4D12 /* UIHelpers */,
 				C739C27020F16A22009BB2CB /* Model */,
 				C739C26F20F16A1B009BB2CB /* ViewModel */,
@@ -92,6 +99,7 @@
 		C739C26F20F16A1B009BB2CB /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				C765687720F990A500AD4D12 /* StartScreenViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -109,6 +117,15 @@
 				C765687520F2DD2900AD4D12 /* UIHelpers.swift */,
 			);
 			path = UIHelpers;
+			sourceTree = "<group>";
+		};
+		C765687920F99B1E00AD4D12 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				C765687A20F99B5200AD4D12 /* Coordinator.swift */,
+				C765687E20F99DA800AD4D12 /* StartScreenCoordinator.swift */,
+			);
+			path = Coordinators;
 			sourceTree = "<group>";
 		};
 		E4A7DA6B874B80B2F8955C3E /* Pods */ = {
@@ -231,9 +248,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C765687F20F99DA800AD4D12 /* StartScreenCoordinator.swift in Sources */,
 				C765687620F2DD2900AD4D12 /* UIHelpers.swift in Sources */,
 				C739C27220F16A7F009BB2CB /* StartScreenViewController.swift in Sources */,
+				C765687B20F99B5200AD4D12 /* Coordinator.swift in Sources */,
 				C739C25D20F16859009BB2CB /* AppDelegate.swift in Sources */,
+				C765687820F990A500AD4D12 /* StartScreenViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

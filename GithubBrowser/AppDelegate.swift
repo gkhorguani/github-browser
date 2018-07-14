@@ -12,13 +12,14 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var startScreenCoordinator: StartScreenCoordinator!
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
-        let startScreenVC = StartSceenViewController()
         
         if let window = self.window {
-            window.rootViewController = startScreenVC
+            startScreenCoordinator = StartScreenCoordinator(window: window)
+            startScreenCoordinator.start()
             window.makeKeyAndVisible()
         }
         

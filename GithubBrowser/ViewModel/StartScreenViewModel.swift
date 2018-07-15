@@ -10,19 +10,14 @@ import Foundation
 import RxSwift
 
 protocol StartScreenViewDelegate: class {
-    func userNameCheckComplete(viewModel: StartScreenViewModelContract)
+    func userNameCheckComplete(viewModel: StartScreenViewModel)
 }
 
 protocol StartScreenCoordinatorDelegate: class {
-    func didFinish(viewModel: StartScreenViewModelContract)
+    func didFinish(viewModel: StartScreenViewModel)
 }
 
-protocol StartScreenViewModelContract {
-    var viewDelegate: StartScreenViewDelegate? {get set}
-    var coordinatorDelegate: StartScreenCoordinatorDelegate? {get set}
-}
-
-class StartScreenViewModel: StartScreenViewModelContract {
+class StartScreenViewModel: ViewModelContract {
     weak var coordinatorDelegate: StartScreenCoordinatorDelegate?
     weak var viewDelegate: StartScreenViewDelegate?
     

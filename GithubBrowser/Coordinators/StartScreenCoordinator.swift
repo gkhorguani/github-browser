@@ -12,8 +12,7 @@ import UIKit
 class StartScreenCoordinator: Coordinator {
     let window: UIWindow
     
-    init(window: UIWindow)
-    {
+    init(window: UIWindow) {
         self.window = window
     }
     
@@ -27,8 +26,11 @@ class StartScreenCoordinator: Coordinator {
 }
 
 extension StartScreenCoordinator: StartScreenCoordinatorDelegate {
-    func didFinish(viewModel: StartScreenViewModelContract) {
+    func didFinish(viewModel: StartScreenViewModel) {
         print("Start screen is done it's job")
+        
+        let repositoryListCoordinator = RepositoryListCoordinator(window: self.window)
+        repositoryListCoordinator.start()
         
     }
     

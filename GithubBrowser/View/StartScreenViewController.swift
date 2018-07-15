@@ -50,7 +50,7 @@ class StartSceenViewController: UIViewController {
         print("Login vc has been called")
         
         // Bindings
-        setUpBindingis()
+        setupBindings()
         
         // Auto Layouts
         setupUI()
@@ -60,18 +60,15 @@ class StartSceenViewController: UIViewController {
         remakeUI()
     }
     
-    func setUpBindingis() {
+    func setupBindings() {
         userName.rx.text
             .orEmpty
             .bind(to: viewModel!.username)
             .disposed(by: disposeBag)
         
-        viewModel?.isValid.map { $0 }
-            .bind(to: submitButton.rx.isEnabled)
-            .disposed(by: disposeBag)
-        
         viewModel?.isValid.subscribe(onNext: {
             self.submitButton.alpha = $0 ? 1 : 0.5
+            self.submitButton.isEnabled = $0
         }).disposed(by: disposeBag)
     }
     
@@ -108,7 +105,7 @@ class StartSceenViewController: UIViewController {
 }
 
 extension StartSceenViewController: StartScreenViewDelegate {
-    func userNameCheckComplete(viewModel: StartScreenViewModelContract) {
+    func userNameCheckComplete(viewModel: StartScreenViewModel) {
         print("View delegate has received the callback")
     }
 }

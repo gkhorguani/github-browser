@@ -18,7 +18,11 @@ class RepositoryListCoordinator: Coordinator {
     
     func start() {
         let vc = RepositoryListViewController()
-        // todo: view model part
+        let vm = RepositoryListViewModel()
+        let model = RepositoryListModel()
+        vm.model = model
+        vc.viewModel = vm
+        
         window.rootViewController = vc
     }
 }

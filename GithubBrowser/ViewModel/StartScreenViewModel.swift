@@ -22,7 +22,6 @@ class StartScreenViewModel: ViewModelContract {
     weak var viewDelegate: StartScreenViewDelegate?
     
     let username = Variable<String>("")
-    let password = Variable<String>("test")
     let isValid: Observable<Bool>
     
     init() {

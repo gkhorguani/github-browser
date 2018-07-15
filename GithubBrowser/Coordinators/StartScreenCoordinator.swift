@@ -21,6 +21,7 @@ class StartScreenCoordinator: Coordinator {
         let viewModel = StartScreenViewModel()
         viewModel.coordinatorDelegate = self
         vc.viewModel = viewModel
+        
         window.rootViewController = vc
     }
 }

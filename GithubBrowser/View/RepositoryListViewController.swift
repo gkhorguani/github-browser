@@ -9,13 +9,22 @@
 import UIKit
 
 class RepositoryListViewController: UIViewController {
+    var viewModel: RepositoryListViewModel? {
+        willSet {
+            viewModel?.viewDelegate = nil
+        }
+        didSet {
+            viewModel?.viewDelegate = self
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.backgroundColor = .blue
-
-        // Do any additional setup after loading the view.
+        
+        // Test
+        _ = viewModel?.fetchRepositories(username: "gkhorguani")
     }
 }
 

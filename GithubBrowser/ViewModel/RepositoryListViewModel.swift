@@ -20,4 +20,12 @@ class RepositoryListViewModel: ViewModelContract {
     var viewDelegate: RepositoryListViewDelegate?
     var coordinatorDelegate: RepositioryListCoordinatorDelegate?
     
+    var model: RepositoryListModel?
+    
+    func fetchRepositories(username: String) {
+        model?.fetchRepositories(username: username) { repository in
+            print(repository)
+        }
+    }
+    
 }

@@ -12,6 +12,7 @@
 		C71B891720FACF20001185D6 /* RepositoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71B891620FACF20001185D6 /* RepositoryListViewController.swift */; };
 		C71B891920FAD05C001185D6 /* RepositoryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71B891820FAD05C001185D6 /* RepositoryListViewModel.swift */; };
 		C71B891B20FAD142001185D6 /* ViewModelContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71B891A20FAD142001185D6 /* ViewModelContract.swift */; };
+		C71B891D20FAF952001185D6 /* RepositoryListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71B891C20FAF952001185D6 /* RepositoryListModel.swift */; };
 		C739C25D20F16859009BB2CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C739C25C20F16859009BB2CB /* AppDelegate.swift */; };
 		C739C26420F1685B009BB2CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C739C26320F1685B009BB2CB /* Assets.xcassets */; };
 		C739C26720F1685B009BB2CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C739C26520F1685B009BB2CB /* LaunchScreen.storyboard */; };
@@ -29,6 +30,7 @@
 		C71B891620FACF20001185D6 /* RepositoryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryListViewController.swift; sourceTree = "<group>"; };
 		C71B891820FAD05C001185D6 /* RepositoryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryListViewModel.swift; sourceTree = "<group>"; };
 		C71B891A20FAD142001185D6 /* ViewModelContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelContract.swift; sourceTree = "<group>"; };
+		C71B891C20FAF952001185D6 /* RepositoryListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryListModel.swift; sourceTree = "<group>"; };
 		C739C25920F16859009BB2CB /* GithubBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C739C25C20F16859009BB2CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C739C26320F1685B009BB2CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 		C739C27020F16A22009BB2CB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C71B891C20FAF952001185D6 /* RepositoryListModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -242,15 +245,19 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-GithubBrowser/Pods-GithubBrowser-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -268,6 +275,7 @@
 				C765687F20F99DA800AD4D12 /* StartScreenCoordinator.swift in Sources */,
 				C765687620F2DD2900AD4D12 /* UIHelpers.swift in Sources */,
 				C739C27220F16A7F009BB2CB /* StartScreenViewController.swift in Sources */,
+				C71B891D20FAF952001185D6 /* RepositoryListModel.swift in Sources */,
 				C71B891B20FAD142001185D6 /* ViewModelContract.swift in Sources */,
 				C765687B20F99B5200AD4D12 /* Coordinator.swift in Sources */,
 				C739C25D20F16859009BB2CB /* AppDelegate.swift in Sources */,

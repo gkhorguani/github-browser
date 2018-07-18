@@ -16,12 +16,15 @@ class RepositoryListCoordinator: Coordinator {
         self.window = window
     }
     
-    func start(args: [String]?) {
+    func start(router r: Router<String>?) {
         let vc = RepositoryListViewController()
         let vm = RepositoryListViewModel()
-        if let arguments = args {
-            vm.username = arguments[0]
+        
+        // Set parameters, if any
+        if let router = r {
+            vm.router = router
         }
+        
         let model = RepositoryListModel()
         vm.model = model
         vc.viewModel = vm

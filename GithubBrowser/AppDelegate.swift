@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if let window = self.window {
             startScreenCoordinator = StartScreenCoordinator(window: window)
-            startScreenCoordinator.start()
+            startScreenCoordinator.start(router: nil)
             window.makeKeyAndVisible()
         }
         

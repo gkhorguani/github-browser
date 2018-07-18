@@ -16,7 +16,7 @@ class StartScreenCoordinator: Coordinator {
         self.window = window
     }
     
-    func start(args: [String]? = []) {
+    func start(router: Router<String>?) {
         let vc = StartSceenViewController()
         let viewModel = StartScreenViewModel()
         viewModel.coordinatorDelegate = self
@@ -28,11 +28,11 @@ class StartScreenCoordinator: Coordinator {
 
 extension StartScreenCoordinator: StartScreenCoordinatorDelegate {
     func didFinish(viewModel: StartScreenViewModel) {
-        print("Start screen is done it's job")
-        
         let repositoryListCoordinator = RepositoryListCoordinator(window: self.window)
-        repositoryListCoordinator.start(args: [viewModel.username.value])
+        let router = Router<String>()
         
+        router.setParmeter(parameter: viewModel.username.value)
+        repositoryListCoordinator.start(router: router)
     }
     
     

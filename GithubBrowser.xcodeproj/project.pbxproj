@@ -17,6 +17,7 @@
 		C739C26420F1685B009BB2CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C739C26320F1685B009BB2CB /* Assets.xcassets */; };
 		C739C26720F1685B009BB2CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C739C26520F1685B009BB2CB /* LaunchScreen.storyboard */; };
 		C739C27220F16A7F009BB2CB /* StartScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C739C27120F16A7F009BB2CB /* StartScreenViewController.swift */; };
+		C763B17C20FEEB890047A96B /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = C763B17B20FEEB890047A96B /* Router.swift */; };
 		C765687620F2DD2900AD4D12 /* UIHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C765687520F2DD2900AD4D12 /* UIHelpers.swift */; };
 		C765687820F990A500AD4D12 /* StartScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C765687720F990A500AD4D12 /* StartScreenViewModel.swift */; };
 		C765687B20F99B5200AD4D12 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C765687A20F99B5200AD4D12 /* Coordinator.swift */; };
@@ -37,6 +38,7 @@
 		C739C26620F1685B009BB2CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C739C26820F1685B009BB2CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C739C27120F16A7F009BB2CB /* StartScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreenViewController.swift; sourceTree = "<group>"; };
+		C763B17B20FEEB890047A96B /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		C765687520F2DD2900AD4D12 /* UIHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelpers.swift; sourceTree = "<group>"; };
 		C765687720F990A500AD4D12 /* StartScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreenViewModel.swift; sourceTree = "<group>"; };
 		C765687A20F99B5200AD4D12 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				C765687A20F99B5200AD4D12 /* Coordinator.swift */,
 				C765687E20F99DA800AD4D12 /* StartScreenCoordinator.swift */,
 				C71B891420FACE65001185D6 /* RepositoryListCoordinator.swift */,
+				C763B17B20FEEB890047A96B /* Router.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 				C765687F20F99DA800AD4D12 /* StartScreenCoordinator.swift in Sources */,
 				C765687620F2DD2900AD4D12 /* UIHelpers.swift in Sources */,
 				C739C27220F16A7F009BB2CB /* StartScreenViewController.swift in Sources */,
+				C763B17C20FEEB890047A96B /* Router.swift in Sources */,
 				C71B891D20FAF952001185D6 /* RepositoryListModel.swift in Sources */,
 				C71B891B20FAD142001185D6 /* ViewModelContract.swift in Sources */,
 				C765687B20F99B5200AD4D12 /* Coordinator.swift in Sources */,

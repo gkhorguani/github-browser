@@ -20,13 +20,15 @@ protocol RepositioryListCoordinatorDelegate: class {
 class RepositoryListViewModel: ViewModelContract {
     weak var viewDelegate: RepositoryListViewDelegate?
     weak var coordinatorDelegate: RepositioryListCoordinatorDelegate?
+    var router: Router<String>?
     var model: RepositoryListModel?
     var isLoading = Variable<Bool>(true)
-    var username: String?
     
     func fetchRepositories() {
-        model?.fetchRepositories(username: self.username!) { repositories in
-            self.isLoading.value = false
+        if let username = router?.routeParams[0] {
+            model?.fetchRepositories(username: username) { repositories in
+                self.isLoading.value = false
+            }
         }
     }
     

@@ -11,7 +11,9 @@ import Foundation
 protocol ViewModelContract {
     associatedtype T
     associatedtype U
+    associatedtype R
     
     var viewDelegate: T? {get set}
     var coordinatorDelegate: U? {get set}
+    var router: Router<R>? { get }
 }

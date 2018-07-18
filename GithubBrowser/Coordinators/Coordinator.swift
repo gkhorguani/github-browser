@@ -11,5 +11,5 @@ import Foundation
 protocol Coordinator: class {
     associatedtype Parameter
     
-    func start(args: [Parameter]?)
+    func start(router: Router<Parameter>?)
 }

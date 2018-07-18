@@ -6,14 +6,18 @@
 //  Copyright © 2018 Giorgi Khorguani. All rights reserved.
 //
 
-import Foundation
-
 protocol ViewModelContract {
     associatedtype T
     associatedtype U
-    associatedtype R
     
     var viewDelegate: T? {get set}
     var coordinatorDelegate: U? {get set}
-    var router: Router<R>? { get }
 }
+
+protocol ViewModelRoutable {
+    associatedtype P
+    
+    var router: Router<P>? { get }
+}
+
+// Should I also create the unicorn type of contract combining these two?

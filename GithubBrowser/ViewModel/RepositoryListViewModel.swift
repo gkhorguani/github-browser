@@ -17,7 +17,7 @@ protocol RepositioryListCoordinatorDelegate: class {
     func didFinish(viewModel: RepositoryListViewModel)
 }
 
-class RepositoryListViewModel: ViewModelContract {
+class RepositoryListViewModel: ViewModelContract, ViewModelRoutable {
     weak var viewDelegate: RepositoryListViewDelegate?
     weak var coordinatorDelegate: RepositioryListCoordinatorDelegate?
     var router: Router<String>?

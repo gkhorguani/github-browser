@@ -20,7 +20,6 @@ protocol StartScreenCoordinatorDelegate: class {
 class StartScreenViewModel: ViewModelContract {
     weak var coordinatorDelegate: StartScreenCoordinatorDelegate?
     weak var viewDelegate: StartScreenViewDelegate?
-    var router: Router<String>?
     
     let username = Variable<String>("")
     let isValid: Observable<Bool>

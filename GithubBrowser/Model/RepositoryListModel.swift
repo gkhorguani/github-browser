@@ -12,7 +12,7 @@ import SwiftyJSON
 
 struct Repository {
     var name: String
-    var startsCount: Int
+    var language: String
 }
 
 class RepositoryListModel {
@@ -20,7 +20,7 @@ class RepositoryListModel {
         Alamofire.request("https://api.github.com/users/\(username)/repos").responseJSON { response in
             if let json = response.result.value {
                 let repositories: [Repository] = JSON(json).arrayValue.map(){ result in
-                    let repo = Repository(name: result["name"].stringValue, startsCount: result["stargazers_count"].intValue)
+                    let repo = Repository(name: result["name"].stringValue, language: result["language"].stringValue)
                     return repo
                 }
                 

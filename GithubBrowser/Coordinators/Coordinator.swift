@@ -9,5 +9,7 @@
 import Foundation
 
 protocol Coordinator: class {
-    func start()
+    associatedtype Parameter
+    
+    func start(args: [Parameter]?)
 }

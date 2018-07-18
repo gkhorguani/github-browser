@@ -16,7 +16,7 @@ class StartScreenCoordinator: Coordinator {
         self.window = window
     }
     
-    func start() {
+    func start(args: [String]? = []) {
         let vc = StartSceenViewController()
         let viewModel = StartScreenViewModel()
         viewModel.coordinatorDelegate = self
@@ -31,7 +31,7 @@ extension StartScreenCoordinator: StartScreenCoordinatorDelegate {
         print("Start screen is done it's job")
         
         let repositoryListCoordinator = RepositoryListCoordinator(window: self.window)
-        repositoryListCoordinator.start()
+        repositoryListCoordinator.start(args: [viewModel.username.value])
         
     }
     

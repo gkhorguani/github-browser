@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class RepositoryListViewController: UIViewController {
+    let disposeBag = DisposeBag()
     var viewModel: RepositoryListViewModel? {
         willSet {
             viewModel?.viewDelegate = nil
@@ -21,10 +24,15 @@ class RepositoryListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = .blue
+        setupBindings()
         
-        // Test
-        _ = viewModel?.fetchRepositories(username: "gkhorguani")
+        viewModel?.fetchRepositories()
+    }
+    
+    func setupBindings() {
+        viewModel?.isLoading.asObservable().subscribe(onNext: {
+            self.view.backgroundColor = $0 ? .blue : .orange
+        }).disposed(by: disposeBag)
     }
 }
 

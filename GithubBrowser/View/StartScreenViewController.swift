@@ -1,5 +1,5 @@
 //
-//  LoginViewController.swift
+//  StartScreenViewController.swift
 //  GithubBrowser
 //
 //  Created by Giorgi Khorguani on 7/7/18.

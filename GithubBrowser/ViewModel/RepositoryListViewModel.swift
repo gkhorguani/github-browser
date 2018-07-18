@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RxSwift
 
 protocol RepositoryListViewDelegate: class {
     func fetchComplete(viewModel: RepositoryListViewModel)
@@ -17,14 +18,15 @@ protocol RepositioryListCoordinatorDelegate: class {
 }
 
 class RepositoryListViewModel: ViewModelContract {
-    var viewDelegate: RepositoryListViewDelegate?
-    var coordinatorDelegate: RepositioryListCoordinatorDelegate?
-    
+    weak var viewDelegate: RepositoryListViewDelegate?
+    weak var coordinatorDelegate: RepositioryListCoordinatorDelegate?
     var model: RepositoryListModel?
+    var isLoading = Variable<Bool>(true)
+    var username: String?
     
-    func fetchRepositories(username: String) {
-        model?.fetchRepositories(username: username) { repository in
-            print(repository)
+    func fetchRepositories() {
+        model?.fetchRepositories(username: self.username!) { repositories in
+            self.isLoading.value = false
         }
     }
     

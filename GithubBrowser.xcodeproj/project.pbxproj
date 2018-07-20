@@ -18,6 +18,8 @@
 		C739C26720F1685B009BB2CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C739C26520F1685B009BB2CB /* LaunchScreen.storyboard */; };
 		C739C27220F16A7F009BB2CB /* StartScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C739C27120F16A7F009BB2CB /* StartScreenViewController.swift */; };
 		C763B17C20FEEB890047A96B /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = C763B17B20FEEB890047A96B /* Router.swift */; };
+		C763B17E21018FBF0047A96B /* RepositoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C763B17D21018FBF0047A96B /* RepositoryTableViewCell.swift */; };
+		C763B1802101915C0047A96B /* RepositoryCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C763B17F2101915C0047A96B /* RepositoryCellViewModel.swift */; };
 		C765687620F2DD2900AD4D12 /* UIHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C765687520F2DD2900AD4D12 /* UIHelpers.swift */; };
 		C765687820F990A500AD4D12 /* StartScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C765687720F990A500AD4D12 /* StartScreenViewModel.swift */; };
 		C765687B20F99B5200AD4D12 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C765687A20F99B5200AD4D12 /* Coordinator.swift */; };
@@ -39,6 +41,8 @@
 		C739C26820F1685B009BB2CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C739C27120F16A7F009BB2CB /* StartScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreenViewController.swift; sourceTree = "<group>"; };
 		C763B17B20FEEB890047A96B /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		C763B17D21018FBF0047A96B /* RepositoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTableViewCell.swift; sourceTree = "<group>"; };
+		C763B17F2101915C0047A96B /* RepositoryCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCellViewModel.swift; sourceTree = "<group>"; };
 		C765687520F2DD2900AD4D12 /* UIHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelpers.swift; sourceTree = "<group>"; };
 		C765687720F990A500AD4D12 /* StartScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreenViewModel.swift; sourceTree = "<group>"; };
 		C765687A20F99B5200AD4D12 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -105,6 +109,7 @@
 			children = (
 				C739C27120F16A7F009BB2CB /* StartScreenViewController.swift */,
 				C71B891620FACF20001185D6 /* RepositoryListViewController.swift */,
+				C763B17D21018FBF0047A96B /* RepositoryTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -115,6 +120,7 @@
 				C765687720F990A500AD4D12 /* StartScreenViewModel.swift */,
 				C71B891820FAD05C001185D6 /* RepositoryListViewModel.swift */,
 				C71B891A20FAD142001185D6 /* ViewModelContract.swift */,
+				C763B17F2101915C0047A96B /* RepositoryCellViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -279,12 +285,14 @@
 				C765687620F2DD2900AD4D12 /* UIHelpers.swift in Sources */,
 				C739C27220F16A7F009BB2CB /* StartScreenViewController.swift in Sources */,
 				C763B17C20FEEB890047A96B /* Router.swift in Sources */,
+				C763B17E21018FBF0047A96B /* RepositoryTableViewCell.swift in Sources */,
 				C71B891D20FAF952001185D6 /* RepositoryListModel.swift in Sources */,
 				C71B891B20FAD142001185D6 /* ViewModelContract.swift in Sources */,
 				C765687B20F99B5200AD4D12 /* Coordinator.swift in Sources */,
 				C739C25D20F16859009BB2CB /* AppDelegate.swift in Sources */,
 				C71B891920FAD05C001185D6 /* RepositoryListViewModel.swift in Sources */,
 				C71B891520FACE65001185D6 /* RepositoryListCoordinator.swift in Sources */,
+				C763B1802101915C0047A96B /* RepositoryCellViewModel.swift in Sources */,
 				C765687820F990A500AD4D12 /* StartScreenViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -18,12 +18,13 @@ class RepositoryListViewModel: ViewModelContract, ViewModelRoutable {
     weak var coordinatorDelegate: RepositioryListCoordinatorDelegate?
     var router: Router<String>?
     var model: RepositoryListModel?
+    var repositories = [Repository]()
     var isLoading = Variable<Bool>(true)
     
     func fetchRepositories() {
         if let username = router?.routeParams["arg0"] {
             model?.fetchRepositories(username: username) { repositories in
-                print(repositories)
+                self.repositories = repositories
                 self.isLoading.value = false
             }
         }

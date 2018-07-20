@@ -54,7 +54,7 @@ extension RepositoryListViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! RepositoryTableViewCell
         if let repository = viewModel?.repositories[indexPath.row] {
-            cell.viewModel = RepositoryCellViewModel(name: repository.name, language: repository.language)
+            cell.viewModel = RepositoryCellViewModel(_name: repository.name, _language: repository.language)
         }
         
         return cell

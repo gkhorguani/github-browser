@@ -23,9 +23,18 @@ class RepositoryTableViewCell: UITableViewCell {
         return label
     }()
     
+    lazy var languageLabelView: UIView = {
+       var labelView = UIView()
+        labelView.backgroundColor = UIColor(red:0.00, green:0.75, blue:0.44, alpha:1.0)
+        labelView.layer.cornerRadius = 20
+        
+        return labelView
+    }()
+    
     lazy var languageLabel: UILabel = {
-       var label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 12)
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.textColor = .white
         
         return label
     }()
@@ -40,18 +49,27 @@ class RepositoryTableViewCell: UITableViewCell {
     
     func setupUI() {
         contentView.addSubview(nameLabel)
-        contentView.addSubview(languageLabel)
-        nameLabel.text = viewModel!.name
-        languageLabel.text = viewModel!.language
+        languageLabelView.addSubview(languageLabel)
+        contentView.addSubview(languageLabelView)
+        
+        nameLabel.text = viewModel!.Name
+        languageLabel.text = viewModel!.Language
+        
         
         nameLabel.snp.makeConstraints { make in
             make.left.equalTo(self.contentView).offset(20)
             make.centerY.equalTo(self.contentView)
         }
         
-        languageLabel.snp.makeConstraints { make in
+        languageLabelView.snp.makeConstraints { make in
             make.right.equalTo(self.contentView).offset(-20)
+            make.width.greaterThanOrEqualTo(100)
+            make.height.greaterThanOrEqualTo(40)
             make.centerY.equalTo(self.contentView)
+        }
+        
+        languageLabel.snp.makeConstraints { make in
+            make.center.equalTo(self.languageLabelView)
         }
     }
 

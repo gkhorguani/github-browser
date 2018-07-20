@@ -2,22 +2,22 @@
 //  Router.swift
 //  GithubBrowser
 //
-//  Created by Giorgi Khorguani on 7/17/18.
-//  Copyright © 2018 Giorgi Khorguani. All rights reserved.
-//
 
 protocol AppRouter {
     associatedtype Parameter
-    var routeParams: [Parameter] { get }
     
-    func setParmeter(parameter: Parameter)
+    var routeParams: [String: Parameter] { get }
+    
+    func setParmeters(parameters: Parameter...)
 }
 
 class Router<T>: AppRouter {
-    typealias Parameter = T
-    var routeParams: [T] = []
+    var routeParams = Dictionary<String, T>()
     
-    func setParmeter(parameter: T) {
-        routeParams.append(parameter)
+    func setParmeters(parameters: T...) {
+        for(index, parameter) in parameters.enumerated() {
+            let key = "arg\(index)"
+            routeParams[key] = parameter
+        }
     }
 }

@@ -1,9 +1,5 @@
 //
 //  RepositoryListViewModel.swift
-//  GithubBrowser
-//
-//  Created by Giorgi Khorguani on 7/14/18.
-//  Copyright © 2018 Giorgi Khorguani. All rights reserved.
 //
 
 import Foundation
@@ -25,8 +21,9 @@ class RepositoryListViewModel: ViewModelContract, ViewModelRoutable {
     var isLoading = Variable<Bool>(true)
     
     func fetchRepositories() {
-        if let username = router?.routeParams[0] {
+        if let username = router?.routeParams["arg0"] {
             model?.fetchRepositories(username: username) { repositories in
+                print(repositories)
                 self.isLoading.value = false
             }
         }

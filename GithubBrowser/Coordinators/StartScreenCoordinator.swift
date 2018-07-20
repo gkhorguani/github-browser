@@ -31,7 +31,7 @@ extension StartScreenCoordinator: StartScreenCoordinatorDelegate {
         let repositoryListCoordinator = RepositoryListCoordinator(window: self.window)
         let router = Router<String>()
         
-        router.setParmeter(parameter: viewModel.username.value)
+        router.setParmeters(parameters: viewModel.username.value) // This can be a list like javascript args..
         repositoryListCoordinator.start(router: router)
     }
     

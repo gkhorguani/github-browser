@@ -45,13 +45,8 @@ class StartSceenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        print("Login vc has been called")
-        
         // Bindings
         setupBindings()
-        
         // Auto Layouts
         setupUI()
     }
